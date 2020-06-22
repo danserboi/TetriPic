@@ -1,0 +1,46 @@
+Sunt 2 fisiere sursa: main.c si utils.c. In main.c sunt apelate doar
+functiile corespunzatoare task-urilor 1, 2, 3 si 4 + bonus. In utils.c sunt
+prezente absolut toate functiile folosite in aceasta tema.
+De asemenea, sunt folosite 2 fisiere header:utils.h si bmp_header.h. In 
+utils.h sunt prezente anteturile functiilor din utils.c. bmp_header.h este
+cel oferit ca resursa in cadrul temei si contine declaratiile a 2 structuri
+privitoare la informatia continuta de fileheader-ul si infoheader-ul unui
+fisier bmp.
+In continuare ma voi rezuma sa comentez functiile din utils.c.
+In functia default_values_bmp punem valorile pe care le regasim in orice
+structura bmp_fileheader si bmp_infoheader.
+In functiile de tip "X_piece" construim piesele.
+In functia piece_rotation rotim piesa dintr-un fisier si piesa rotita o
+bagam intr-un alt fisier.
+In functia task1, apelam functiile "X_piece".
+In functia task2, apelam functia task1 pentru a avea la indemana fisierele
+cu piese si apoi rotim fiecare piesa de 3 ori, obtinand piesele la 90, 180,
+respectiv 270 de grade.
+In functia rotation rotim doar subpixelii unei piese, iar in functia
+complete_rotation rotim subpixelii sub un anumit unghi, apeland functia
+rotation de atatea ori cat este nevoie pentru a obtine unghiurile dorite:
+0 grade(deloc), 90 grade(o data), 180 grade(de 2 ori), 270 grade(de 3 ori).
+Functiile "X_pixels" pun doar valorile corespunzatoare subpixelilor unei
+piese in "matricea" de subpixeli; "matricea" va fi construita ca un
+dreptunghi, pentru piesele care nu au o astfel de forma, restul de subpixeli
+vor fi 0 pentru a pune cu usurinta piesele pe harta ulterior.
+In functia map cream o harta goala cu inaltimea si lungimea dorita.
+Functia move e responsabile pentru plasarea piesei pe coloana dorita.
+In elim_full_row elimin randurile complete.
+Functia game_over verifica daca jocul s-a terminat.
+Functia copy_file creaza un fisier bmp identic cu cel dat ca parametru,
+dar cu alt nume.
+In functia task3 citim numarul de mutari, inaltimea si latimea hartii, 
+cream o harta goala, citim pentru fiecare mutare piesa, rotatia si coloana,
+cream "matricea" corespunzatoare piesei citite si o rotim; punem piesa pe
+pe harta; verificam daca jocul s-a terminat si daca nu, eliminam randurile
+pline.
+Functia task4 e similara cu task3, cu deosebirea ca lucram cu o harta
+care contine piese deja.
+Functia verify_piece verifica daca o piesa se regaseste pe harta pe o anumita
+coloana si un anumit rand
+Functia mark_piece pune pixeli negri pe harta in locul unei piese, tocmai
+pentru a nu mai lua in considerare inca o data acei pixeli.
+In functia bonus verificam pe fiecare rand si coloana daca se regaseste
+vreo piesa si retinem piesa, rotatia si coloana, pe care le vom pune in
+fisierul cerut impreuna cu numarul de piese regasite.
